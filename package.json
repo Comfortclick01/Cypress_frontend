@@ -1,0 +1,22 @@
+{
+  "name": "cypress_frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Comfortclick01/Cypress_frontend.git"
+  },
+  "author": "Abhishek Yadav",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Comfortclick01/Cypress_frontend/issues"
+  },
+  "homepage": "https://github.com/Comfortclick01/Cypress_frontend#readme",
+  "description": "",
+  "devDependencies": {
+    "cypress": "^14.0.3"
+  }
+}
