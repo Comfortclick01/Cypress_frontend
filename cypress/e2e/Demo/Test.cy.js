@@ -1,5 +1,5 @@
 describe('Test',()=>{
     it('Test',()=>{
-    cy.visit('https://www.weightworld.uk/')
+    cy.visit('https://www.weightworld.u/')
     })
 })
