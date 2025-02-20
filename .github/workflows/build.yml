@@ -29,6 +29,20 @@
 
 
 
+# name: End-to-end tests
+# on: push
+# jobs:
+#   cypress-run:
+#     runs-on: ubuntu-24.04
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v4
+#       # Install npm dependencies, cache them correctly
+#       # and run all Cypress tests
+#       - name: Cypress run
+#         uses: cypress-io/github-action@v6
+
+
 name: End-to-end tests
 on: push
 jobs:
@@ -37,7 +51,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      # Install npm dependencies, cache them correctly
-      # and run all Cypress tests
+
+      # Cache node_modules to speed up installation
+      - name: Cache node_modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-modules-
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # Run Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v6
+
