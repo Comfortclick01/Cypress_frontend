@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -39,7 +39,7 @@ jobs:
           echo "Cache cleared after tests"
 
       - name: Upload Cypress results (optional)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.1.0  # Use a specific stable version
         with:
           name: cypress-results
           path: cypress/results
