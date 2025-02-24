@@ -39,7 +39,7 @@ jobs:
           echo "Cache cleared after tests"
 
       - name: Upload Cypress results (optional)
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: cypress-results
           path: cypress/results
