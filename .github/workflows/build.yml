@@ -2,7 +2,7 @@ name: End-to-end tests
 on: push
 jobs:
   cypress-run:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -23,4 +23,6 @@ jobs:
       # Run Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v6
-
+        with:
+          start: npm start  # If you need to start your app before running tests
+          wait-on: 'http://localhost:3000'  # Wait for the app to be ready
